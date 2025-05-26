@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Maillots2Foot - Accueil
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="../css/compte.css">
+    {%if session.login is defined %}
+    <li><a href="index.php?page=deconnexion">Se déconnecter</a></li>
+    {% else %}
+    <li><a href="index.php?page=connexion">Se connecter</a></li>
+    {% endif %}
+    {%if session.login is defined %}
+    <li><a href="#">{{session.login}}</a></li>
+{% endif %}
+{% endblock %}
